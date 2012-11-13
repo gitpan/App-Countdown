@@ -49,7 +49,7 @@
    "provides" : {
       "App::Countdown" : {
          "file" : "lib/App/Countdown.pm",
-         "version" : "v0.0.3"
+         "version" : "v0.0.4"
       }
    },
    "release_status" : "stable",
@@ -59,8 +59,8 @@
          "http://www.opensource.org/licenses/mit-license.php"
       ],
       "repository" : {
-         "url" : "http://bitbucket.org/shlomif/perl-app-coundown"
+         "url" : "http://bitbucket.org/shlomif/perl-App-Countdown"
       }
    },
-   "version" : "v0.0.3"
+   "version" : "v0.0.4"
 }

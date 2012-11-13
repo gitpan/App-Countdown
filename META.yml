@@ -25,7 +25,7 @@ name: App-Countdown
 provides:
   App::Countdown:
     file: lib/App/Countdown.pm
-    version: v0.0.3
+    version: v0.0.4
 requires:
   Carp: 0
   IO::Handle: 0
@@ -37,5 +37,5 @@ requires:
 resources:
   homepage: http://www.shlomifish.org/open-source/projects/countdown/
   license: http://www.opensource.org/licenses/mit-license.php
-  repository: http://bitbucket.org/shlomif/perl-app-coundown
-version: v0.0.3
+  repository: http://bitbucket.org/shlomif/perl-App-Countdown
+version: v0.0.4
