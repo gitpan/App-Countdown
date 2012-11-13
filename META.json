@@ -1,0 +1,66 @@
+{
+   "abstract" : "wait a certain amount of time while displaying the remainging",
+   "author" : [
+      "Shlomi Fish <shlomif@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+   "keywords" : [
+      "app",
+      "application",
+      "console",
+      "countdown",
+      "modulino",
+      "sleep",
+      "terminal",
+      "timer"
+   ],
+   "license" : [
+      "mit"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "App-Countdown",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Test::More" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Carp" : "0",
+            "IO::Handle" : "0",
+            "POSIX" : "0",
+            "Time::HiRes" : "0",
+            "perl" : "5.008",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "App::Countdown" : {
+         "file" : "lib/App/Countdown.pm",
+         "version" : "v0.0.1"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "homepage" : "http://www.shlomifish.org/open-source/projects/countdown/",
+      "license" : [
+         "http://www.opensource.org/licenses/mit-license.php"
+      ],
+      "repository" : {
+         "url" : "http://bitbucket.org/shlomif/perl-app-coundown"
+      }
+   },
+   "version" : "v0.0.1"
+}
