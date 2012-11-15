@@ -8,7 +8,8 @@ use warnings FATAL => 'all';
 use Time::HiRes qw(sleep time);
 use POSIX qw();
 use IO::Handle;
-
+use Getopt::Long qw(GetOptionsFromArray);
+use Pod::Usage;
 use Carp;
 
 =head1 NAME
@@ -18,11 +19,11 @@ time.
 
 =head1 VERSION
 
-Version 0.0.4
+Version 0.2.0
 
 =cut
 
-our $VERSION = '0.0.4';
+our $VERSION = '0.2.0';
 
 
 =head1 SYNOPSIS
@@ -66,11 +67,59 @@ sub _delay
     return $self->{_delay};
 }
 
+sub _calc_delay {
+    my ($self, $delay_spec) = @_;
+
+    if (my ($n, $qualifier) = $delay_spec =~ /\A((?:[1-9][0-9]*(?:\.\d*)?)|(?:0\.\d+))([mh]?)\z/)
+    {
+        return int($n * ($qualifier eq 'h'
+                ? (60 * 60)
+                : $qualifier eq 'm'
+                ? 60
+                : 1
+            )
+        );
+    }
+    else
+    {
+        die "Invalid delay. Must be a positive and possibly fractional number, possibly followed by m or h";
+    }
+}
+
 sub _init
 {
     my ($self, $args) = @_;
 
     my $argv = [@{$args->{argv}}];
+
+    my $help = 0;
+    my $man = 0;
+    my $version = 0;
+    if (! (my $ret = GetOptionsFromArray(
+        $argv,
+        'help|h' => \$help,
+        man => \$man,
+        version => \$version,
+    )))
+    {
+        die "GetOptions failed!";
+    }
+
+    if ($help)
+    {
+        pod2usage(1);
+    }
+
+    if ($man)
+    {
+        pod2usage(-verbose => 2);
+    }
+
+    if ($version)
+    {
+        print "countdown version $VERSION .\n";
+        exit(0);
+    }
 
     my $delay = shift(@$argv);
 
@@ -79,12 +128,9 @@ sub _init
         Carp::confess ("You should pass a number of seconds.");
     }
 
-    if ($delay !~ /\A[1-9][0-9]*\z/)
-    {
-        Carp::confess ("Invalid delay. Must be a positive integer.");
-    }
-
-    $self->_delay($delay);
+    $self->_delay(
+        $self->_calc_delay($delay)
+    );
 
     return;
 }

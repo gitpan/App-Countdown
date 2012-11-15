@@ -13,15 +13,19 @@ countdown -- like sleep only displays the amount of time remaining.
 
 =head1 USAGE
 
-    coundown [number of seconds]
+    countdown [number of seconds]
+    countdown [minutes]m
+    countdown [hours]h
 
 =head1 OPTIONS
 
-    None so far.
+    --man - displays the man page.
+    --help - displays the help.
+    --version - displays the version.
 
 =head1 DESCRIPTION
 
-B<countdown> waits for a certain time to pass, in a similar fashion to the the
+B<countdown> waits for a certain time to pass, in a similar fashion to the
 UNIX sleep command, but unlike sleep, it displays the amount of time left to
 sleep. I always found it frustrating that I've placed an alarm using
 C<sleep $secs ; finish-client> and could not tell how much time left, so I

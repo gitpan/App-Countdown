@@ -49,7 +49,7 @@
    "provides" : {
       "App::Countdown" : {
          "file" : "lib/App/Countdown.pm",
-         "version" : "v0.0.4"
+         "version" : "v0.2.0"
       }
    },
    "release_status" : "stable",
@@ -62,5 +62,5 @@
          "url" : "http://bitbucket.org/shlomif/perl-App-Countdown"
       }
    },
-   "version" : "v0.0.4"
+   "version" : "v0.2.0"
 }
