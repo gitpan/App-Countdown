@@ -4,7 +4,7 @@
       "Shlomi Fish <shlomif@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4007, CPAN::Meta::Converter version 2.120921",
    "keywords" : [
       "app",
       "application",
@@ -49,7 +49,7 @@
    "provides" : {
       "App::Countdown" : {
          "file" : "lib/App/Countdown.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.3.0"
       }
    },
    "release_status" : "stable",
@@ -62,5 +62,5 @@
          "url" : "http://bitbucket.org/shlomif/perl-App-Countdown"
       }
    },
-   "version" : "v0.2.0"
+   "version" : "v0.3.0"
 }

@@ -7,7 +7,7 @@ build_requires:
 configure_requires:
   Module::Build: 0
 dynamic_config: 1
-generated_by: 'Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.4007, CPAN::Meta::Converter version 2.120921'
 keywords:
   - app
   - application
@@ -25,7 +25,7 @@ name: App-Countdown
 provides:
   App::Countdown:
     file: lib/App/Countdown.pm
-    version: v0.2.0
+    version: v0.3.0
 requires:
   Carp: 0
   IO::Handle: 0
@@ -38,4 +38,4 @@ resources:
   homepage: http://www.shlomifish.org/open-source/projects/countdown/
   license: http://www.opensource.org/licenses/mit-license.php
   repository: http://bitbucket.org/shlomif/perl-App-Countdown
-version: v0.2.0
+version: v0.3.0
