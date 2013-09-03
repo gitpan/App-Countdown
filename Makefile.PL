@@ -7,6 +7,7 @@ WriteMakefile
   'VERSION_FROM' => 'lib/App/Countdown.pm',
   'PREREQ_PM' => {
                    'Carp' => 0,
+                   'Getopt::Long' => '2.36',
                    'IO::Handle' => 0,
                    'POSIX' => 0,
                    'Test::More' => 0,

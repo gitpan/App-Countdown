@@ -37,6 +37,7 @@
       "runtime" : {
          "requires" : {
             "Carp" : "0",
+            "Getopt::Long" : "2.36",
             "IO::Handle" : "0",
             "POSIX" : "0",
             "Time::HiRes" : "0",
@@ -49,7 +50,7 @@
    "provides" : {
       "App::Countdown" : {
          "file" : "lib/App/Countdown.pm",
-         "version" : "v0.3.0"
+         "version" : "v0.3.1"
       }
    },
    "release_status" : "stable",
@@ -62,5 +63,5 @@
          "url" : "http://bitbucket.org/shlomif/perl-App-Countdown"
       }
    },
-   "version" : "v0.3.0"
+   "version" : "v0.3.1"
 }
