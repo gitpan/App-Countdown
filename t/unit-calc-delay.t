@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 10;
+use Test::More tests => 18;
 
 use App::Countdown;
 
@@ -39,5 +39,29 @@ use App::Countdown;
 
     # TEST
     is ($obj->_calc_delay('90s'), 90, "_calc_delay(90s) == 90 (seconds)");
+
+    # TEST
+    is ($obj->_calc_delay('1m30s'), 60+30, "_calc_delay(1m30s) == 60+30 (seconds)");
+
+    # TEST
+    is ($obj->_calc_delay('200m5s'), 200*60+5, "_calc_delay(200m5s) == 200*60+5 (seconds)");
+
+    # TEST
+    is ($obj->_calc_delay('10m03s'), 10*60+3, "_calc_delay(10m03s) == 10*60+ 3 (seconds)");
+
+    # TEST
+    is ($obj->_calc_delay('1h30m20s'), ((1*60+30)*60+20), "_calc_delay(1h30m20s) == right number (seconds)");
+
+    # TEST
+    is ($obj->_calc_delay('1h04s'), (1*60*60+4), "_calc_delay(1h04s) == right number (seconds)");
+
+    # TEST
+    is ($obj->_calc_delay('1h4s'), (1*60*60+4), "_calc_delay(1h4s) == right number (seconds)");
+
+    # TEST
+    is ($obj->_calc_delay('1h50m'), ((1*60+50)*60), "_calc_delay(1h50m) == right number (seconds)");
+
+    # TEST
+    is ($obj->_calc_delay('1h05m'), ((1*60+5)*60), "_calc_delay(1h05m) (leading 0s in minutes) == right number (seconds)");
 }
 

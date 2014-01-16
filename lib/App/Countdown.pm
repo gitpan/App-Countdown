@@ -1,6 +1,6 @@
 package App::Countdown;
 
-use 5.008;
+use 5.010;
 
 use strict;
 use warnings FATAL => 'all';
@@ -19,11 +19,11 @@ time.
 
 =head1 VERSION
 
-Version 0.3.1
+Version 0.4.0
 
 =cut
 
-our $VERSION = '0.3.1';
+our $VERSION = '0.4.0';
 
 
 =head1 SYNOPSIS
@@ -67,7 +67,19 @@ sub _delay
     return $self->{_delay};
 }
 
-sub _calc_delay {
+my $up_to_60_re = qr/[1-9]|[1-5][0-9]|0[0-9]?/;
+
+sub _get_up_to_60_val
+{
+    my ($v) = @_;
+
+    ($v //= '') =~ s/\A0*//;
+
+    return (length($v) ? $v : 0);
+}
+
+sub _calc_delay
+{
     my ($self, $delay_spec) = @_;
 
     if (my ($n, $qualifier) = $delay_spec =~ /\A((?:[1-9][0-9]*(?:\.\d*)?)|(?:0\.\d+))([mhs]?)\z/)
@@ -79,6 +91,16 @@ sub _calc_delay {
                 : 1
             )
         );
+    }
+    elsif (my ($min, $sec) = $delay_spec =~ /\A([1-9][0-9]*)m($up_to_60_re)s\z/)
+    {
+        return $min * 60 + _get_up_to_60_val($sec);
+    }
+    elsif (((my $hour), $min, $sec) =
+        $delay_spec =~ /\A([1-9][0-9]*)h(?:($up_to_60_re)m)?(?:($up_to_60_re)s)?\z/
+    )
+    {
+        return (($hour * 60 + _get_up_to_60_val($min)) * 60 + _get_up_to_60_val($sec));
     }
     else
     {
