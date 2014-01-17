@@ -14,16 +14,15 @@ use Carp;
 
 =head1 NAME
 
-App::Countdown - wait a certain amount of time while displaying the remainging
-time.
+App::Countdown - wait some specified time while displaying the remaining time.
 
 =head1 VERSION
 
-Version 0.4.1
+Version 0.4.2
 
 =cut
 
-our $VERSION = '0.4.1';
+our $VERSION = '0.4.2';
 
 
 =head1 SYNOPSIS
@@ -228,6 +227,13 @@ L<http://search.cpan.org/dist/App-Countdown/>
 
 =head1 ACKNOWLEDGEMENTS
 
+=over 4
+
+=item * Neil Bowers
+
+Reporting a typo and a problem with the description not fitting on one line.
+
+=back
 
 =head1 LICENSE AND COPYRIGHT
 
